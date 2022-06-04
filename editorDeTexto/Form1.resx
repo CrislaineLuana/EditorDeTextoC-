@@ -63,6 +63,25 @@
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_Recortar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALZSURBVFhH7dZJqE5hGMDxz5hxY46Q2UZZGCJRFjIkC4Rk
+        YSiSBYqFDClZiQyZKWMoFspGyRRiZSgLlClDGSLz7P//uo/OPc797vfd7ndX96nfre+859zzDs/7vCdX
+        HxnRCM3RJP+rDqMjFuEYLuIUVqAPyh4DcR6/8CflLiagbNEb15B+cdITjEBtRwP/bMFv+KJvOIoF2Iy3
+        iE54vSlKjXaYjk3Yge3YiW2YjNwDxEt2owWMhliGn7DtGfqh2HB0Y3AZ3xHv0DusgXlXafTjvJAIE9AX
+        2/4Zo1BMtMZyvETyxbqJ8XC35eMjbDABZ3khEcMQy/ABw1Fd9MdxpEft7wPoi0rhloubbmAomsHRn0a0
+        fcUqtEJWOKJJuIN4JjgTS5H57Gw4urj5OS7B3IjlCY7iCBxlMtpgHZJJG65gNPIZnxWOdgN+IP1wVRzl
+        RJio7XES6Rpizpj1XVBtmDSLYdGJjvgPn8Itk1UnHO1adMY8eG+0PcJcWNKLDqeoK6ZgIWbCqXZtu8GO
+        OKpkJ9yiZzAAQ3C2wmDUerhUc/AKyU7oHmbAfd0WZQk7MB+vke6ATOSN6IAahUvQA9PgElgTYgm6Yy/S
+        S5DmrjkHt3JJYRKuxH1E6Y0k3IfrFdeSnAnzwsRNt3l4eZ4UlYTWfqeulG14Cx7Rzo4JaMGKjocvcNZM
+        7IJhTz8hHrT2FypEB5Eupxai1XiD5P0+7xb2UKqyECX3+FUMggnXCxaYaHNEfiG1RFY4G86Kh008EwqW
+        Ymu8NzmF7v1kmEwxqvcVv6sLZ+cwsg4jr/93pMcNxRzHI1FMONIleIH4/+E2LOPOWD4sm9G4B1V9kDyG
+        n2/FhmvuIeRpm54NP0g8vDohtxXR4HK47p4Lu5A83fajMUoNP8mmYj3Sn2TWnPyoTL54UZaHMDlrO/7t
+        jEKf5a7ZWJQ9PEg8Qg/hAk7AROqJOg2z0xJak/WujxIjl/sLVZw9r32rVNMAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>237, 17</value>
   </metadata>
@@ -78,7 +97,6 @@
   <metadata name="printPreviewDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>770, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="printPreviewDialog1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIAAoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA

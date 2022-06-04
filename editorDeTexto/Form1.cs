@@ -6,6 +6,11 @@ namespace editorDeTexto
     public partial class Form1 : Form
     {
         StreamReader leitura = null;
+        string nome_da_fonte = null;
+        float tamanho_da_fonte = 0;
+        bool negrito = false;
+        bool italico = false;
+        bool sublinhado = false;
 
         public Form1()
         {
@@ -20,14 +25,13 @@ namespace editorDeTexto
 
         private void verificaSalvamento()
         {
-            int salvar = 0;
             if (this.richTextBox1.Text == "")
             {
                 return;
             } 
             else
             {
-                DialogResult result = MessageBox.Show("Deseja salvar o arquivo atual? ", "Atenção", MessageBoxButtons.YesNoCancel);
+                DialogResult result = MessageBox.Show("Deseja salvar o arquivo atual? ", "Atenção", MessageBoxButtons.YesNo);
 
                 switch (result)
                 {
@@ -35,8 +39,6 @@ namespace editorDeTexto
                         Salvar();
                         break;
                     case DialogResult.No:
-                        break;
-                    case DialogResult.Cancel:
                         break;
 
                 }
@@ -137,6 +139,140 @@ namespace editorDeTexto
         private void abnrToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Abrir();
+        }
+
+        private void Copiar()
+        {
+            if (this.richTextBox1.SelectionLength > 0)
+            {
+                richTextBox1.Copy();
+            }
+        }
+
+        private void Recortar()
+        {
+            if(this.richTextBox1.SelectionLength > 0)
+            {
+                richTextBox1.Cut();
+            }
+        }
+
+        private void Colar()
+        {
+            richTextBox1.Paste();
+        }
+
+        private void btn_copiar_Click(object sender, EventArgs e)
+        {
+            Copiar();
+        }
+
+        private void btn_colar_Click(object sender, EventArgs e)
+        {
+            Colar();
+        }
+
+        private void btn_Recortar_Click(object sender, EventArgs e)
+        {
+            Recortar();
+        }
+
+        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Copiar();
+        }
+
+        private void colarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Colar();
+        }
+
+        private void recortarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Recortar();
+        }
+
+        private void Negrito() 
+        {
+
+            nome_da_fonte = richTextBox1.Font.Name;
+            tamanho_da_fonte = richTextBox1.Font.Size;
+
+            negrito = richTextBox1.Font.Bold;
+
+            if (negrito == false)
+            {
+                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_fonte, FontStyle.Bold);
+            } 
+            else
+            {
+                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_fonte, FontStyle.Regular);
+            }
+
+
+        }
+
+        private void Italico()
+        {
+            nome_da_fonte = richTextBox1.Font.Name;
+            tamanho_da_fonte = richTextBox1.Font.Size;
+            italico = richTextBox1.Font.Italic;
+
+            if (italico == false)
+            {
+                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_fonte, FontStyle.Italic);
+            }
+            else
+            {
+                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_fonte, FontStyle.Italic);
+            }
+        }
+
+        private void Sublinhado()
+        {
+
+            nome_da_fonte = richTextBox1.Font.Name;
+            tamanho_da_fonte = richTextBox1.Font.Size;
+            sublinhado = richTextBox1.Font.Underline;
+
+            if (italico == false)
+            {
+                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_fonte, FontStyle.Underline);
+            }
+            else
+            {
+                richTextBox1.SelectionFont = new Font(nome_da_fonte, tamanho_da_fonte, FontStyle.Underline);
+            }
+        }
+
+        private void btn_negrito_Click(object sender, EventArgs e)
+        {
+            Negrito();
+        }
+
+        private void btn_italico_Click(object sender, EventArgs e)
+        {
+            Italico();
+        }
+
+        private void btn_sublinhado_Click(object sender, EventArgs e)
+        {
+            Sublinhado();
+        }
+
+        private void negritoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Negrito();
+        }
+
+        private void itálicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Italico();
+        }
+
+        private void sublinhadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sublinhado();
         }
     }
 }
