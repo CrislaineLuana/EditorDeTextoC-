@@ -68,11 +68,14 @@
             this.btn_esquerda = new System.Windows.Forms.ToolStripButton();
             this.btn_centralizado = new System.Windows.Forms.ToolStripButton();
             this.btn_direita = new System.Windows.Forms.ToolStripButton();
+            this.btn_cor = new System.Windows.Forms.ToolStripButton();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +90,8 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
             this.editarToolStripMenuItem,
@@ -105,6 +110,7 @@
             this.salvarToolStripMenuItem,
             this.imprimirToolStripMenuItem,
             this.sairToolStripMenuItem});
+            this.arquivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
@@ -112,34 +118,35 @@
             // novoToolStripMenuItem
             // 
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem.Text = "Novo";
             this.novoToolStripMenuItem.Click += new System.EventHandler(this.novoToolStripMenuItem_Click);
             // 
             // abnrToolStripMenuItem
             // 
             this.abnrToolStripMenuItem.Name = "abnrToolStripMenuItem";
-            this.abnrToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.abnrToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abnrToolStripMenuItem.Text = "Abnr";
             this.abnrToolStripMenuItem.Click += new System.EventHandler(this.abnrToolStripMenuItem_Click);
             // 
             // salvarToolStripMenuItem
             // 
             this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salvarToolStripMenuItem.Text = "Salvar";
             this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
             // imprimirToolStripMenuItem
             // 
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
             // editarToolStripMenuItem
@@ -157,34 +164,34 @@
             // copiarToolStripMenuItem
             // 
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
             // colarToolStripMenuItem
             // 
             this.colarToolStripMenuItem.Name = "colarToolStripMenuItem";
-            this.colarToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.colarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colarToolStripMenuItem.Text = "Colar";
             this.colarToolStripMenuItem.Click += new System.EventHandler(this.colarToolStripMenuItem_Click);
             // 
             // recortarToolStripMenuItem
             // 
             this.recortarToolStripMenuItem.Name = "recortarToolStripMenuItem";
-            this.recortarToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.recortarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.recortarToolStripMenuItem.Text = "Recortar";
             this.recortarToolStripMenuItem.Click += new System.EventHandler(this.recortarToolStripMenuItem_Click);
             // 
             // desfazerToolStripMenuItem
             // 
             this.desfazerToolStripMenuItem.Name = "desfazerToolStripMenuItem";
-            this.desfazerToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.desfazerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.desfazerToolStripMenuItem.Text = "Desfazer";
             // 
             // refazerToolStripMenuItem
             // 
             this.refazerToolStripMenuItem.Name = "refazerToolStripMenuItem";
-            this.refazerToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.refazerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.refazerToolStripMenuItem.Text = "Refazer";
             // 
             // formatarToolStripMenuItem
@@ -232,23 +239,24 @@
             // centralizarToolStripMenuItem
             // 
             this.centralizarToolStripMenuItem.Name = "centralizarToolStripMenuItem";
-            this.centralizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.centralizarToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.centralizarToolStripMenuItem.Text = "Centralizar";
             // 
             // esquerdaToolStripMenuItem
             // 
             this.esquerdaToolStripMenuItem.Name = "esquerdaToolStripMenuItem";
-            this.esquerdaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.esquerdaToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.esquerdaToolStripMenuItem.Text = "Esquerda";
             // 
             // direitaToolStripMenuItem
             // 
             this.direitaToolStripMenuItem.Name = "direitaToolStripMenuItem";
-            this.direitaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.direitaToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.direitaToolStripMenuItem.Text = "Direita";
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_novo,
             this.btn_abrir,
@@ -265,7 +273,8 @@
             this.toolStripSeparator3,
             this.btn_esquerda,
             this.btn_centralizado,
-            this.btn_direita});
+            this.btn_direita,
+            this.btn_cor});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -276,7 +285,7 @@
             // btn_novo
             // 
             this.btn_novo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_novo.Image = global::editorDeTexto.Properties.Resources.novo_arquivo;
+            this.btn_novo.Image = ((System.Drawing.Image)(resources.GetObject("btn_novo.Image")));
             this.btn_novo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_novo.Name = "btn_novo";
             this.btn_novo.Size = new System.Drawing.Size(23, 22);
@@ -296,7 +305,7 @@
             // btn_salvar
             // 
             this.btn_salvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_salvar.Image = global::editorDeTexto.Properties.Resources.salve_;
+            this.btn_salvar.Image = ((System.Drawing.Image)(resources.GetObject("btn_salvar.Image")));
             this.btn_salvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(23, 22);
@@ -311,7 +320,7 @@
             // btn_copiar
             // 
             this.btn_copiar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_copiar.Image = global::editorDeTexto.Properties.Resources.copia_de;
+            this.btn_copiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_copiar.Image")));
             this.btn_copiar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_copiar.Name = "btn_copiar";
             this.btn_copiar.Size = new System.Drawing.Size(23, 22);
@@ -321,7 +330,7 @@
             // btn_colar
             // 
             this.btn_colar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_colar.Image = global::editorDeTexto.Properties.Resources.colar;
+            this.btn_colar.Image = ((System.Drawing.Image)(resources.GetObject("btn_colar.Image")));
             this.btn_colar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_colar.Name = "btn_colar";
             this.btn_colar.Size = new System.Drawing.Size(23, 22);
@@ -356,7 +365,7 @@
             // btn_italico
             // 
             this.btn_italico.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_italico.Image = global::editorDeTexto.Properties.Resources.italico;
+            this.btn_italico.Image = ((System.Drawing.Image)(resources.GetObject("btn_italico.Image")));
             this.btn_italico.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_italico.Name = "btn_italico";
             this.btn_italico.Size = new System.Drawing.Size(23, 22);
@@ -366,7 +375,7 @@
             // btn_sublinhado
             // 
             this.btn_sublinhado.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_sublinhado.Image = global::editorDeTexto.Properties.Resources.sublinhado;
+            this.btn_sublinhado.Image = ((System.Drawing.Image)(resources.GetObject("btn_sublinhado.Image")));
             this.btn_sublinhado.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_sublinhado.Name = "btn_sublinhado";
             this.btn_sublinhado.Size = new System.Drawing.Size(23, 22);
@@ -376,11 +385,12 @@
             // btn_fonte
             // 
             this.btn_fonte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_fonte.Image = global::editorDeTexto.Properties.Resources.ajuste_de_fonte;
+            this.btn_fonte.Image = ((System.Drawing.Image)(resources.GetObject("btn_fonte.Image")));
             this.btn_fonte.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_fonte.Name = "btn_fonte";
             this.btn_fonte.Size = new System.Drawing.Size(23, 22);
             this.btn_fonte.Text = "Fonte";
+            this.btn_fonte.Click += new System.EventHandler(this.btn_fonte_Click);
             // 
             // toolStripSeparator3
             // 
@@ -417,6 +427,16 @@
             this.btn_direita.Text = "Direita";
             this.btn_direita.Click += new System.EventHandler(this.btn_direita_Click);
             // 
+            // btn_cor
+            // 
+            this.btn_cor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_cor.Image = ((System.Drawing.Image)(resources.GetObject("btn_cor.Image")));
+            this.btn_cor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_cor.Name = "btn_cor";
+            this.btn_cor.Size = new System.Drawing.Size(23, 22);
+            this.btn_cor.Text = "Cor";
+            this.btn_cor.Click += new System.EventHandler(this.btn_cor_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -424,6 +444,10 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.DefaultExt = "txt";
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // printPreviewDialog1
             // 
@@ -435,6 +459,10 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -443,6 +471,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -503,5 +532,8 @@
         private PrintPreviewDialog printPreviewDialog1;
         private ToolStripButton btn_Recortar;
         private ToolStripMenuItem recortarToolStripMenuItem;
+        private PrintDialog printDialog1;
+        private ToolStripButton btn_cor;
+        private ColorDialog colorDialog1;
     }
 }

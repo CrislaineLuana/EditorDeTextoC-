@@ -6,7 +6,7 @@ namespace editorDeTexto
     public partial class Form1 : Form
     {
 
-        StreamReader leitura = null;
+        StringReader leitura = null;
 
         public Form1()
         {
@@ -422,6 +422,96 @@ namespace editorDeTexto
         private void btn_direita_Click(object sender, EventArgs e)
         {
             alinharDireita();
+        }
+
+
+        private void imprimir()
+        {
+            printDialog1.Document = printDocument1;
+            string texto = this.richTextBox1.Text;
+            leitura = new StringReader(texto);
+
+            if(printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.printDocument1.Print();
+            }
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            float linhasPagina = 0;
+            float posicionamentoY = 0;
+            int contador = 0;
+            float margemEsquerda = e.MarginBounds.Left - 50;
+            float margemTop = e.MarginBounds.Top - 50;
+
+            if(margemEsquerda < 5)
+            {
+                margemEsquerda = 20;
+            } 
+
+            if(margemTop < 5)
+            {
+                margemTop = 20;
+            }
+
+            string linha = null;
+            Font font = this.richTextBox1.Font;
+            SolidBrush pincel = new SolidBrush(Color.Black);
+
+            linhasPagina = e.MarginBounds.Height / font.GetHeight(e.Graphics);
+
+            linha = leitura.ReadLine();
+
+            while(contador < linhasPagina)
+            {
+                posicionamentoY = (margemTop + (contador * font.GetHeight(e.Graphics)));
+                e.Graphics.DrawString(linha, font, pincel, margemEsquerda, posicionamentoY, new StringFormat());
+                contador++;
+
+                linha = leitura.ReadLine();
+            }
+
+            if(linha != null)
+            {
+                e.HasMorePages = true;
+            }
+            else
+            {
+                e.HasMorePages = false;
+            }
+
+            pincel.Dispose();
+
+        }
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            imprimir();
+        }
+
+        private void btn_tamanho_TextUpdate(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_fonte_Click(object sender, EventArgs e)
+        {
+            var formato = fontDialog1.ShowDialog();
+            if(formato == DialogResult.OK)
+            {
+                richTextBox1.Font = fontDialog1.Font;
+            }
+        }
+
+        private void btn_cor_Click(object sender, EventArgs e)
+        {
+            var cor = colorDialog1.ShowDialog();
+            if(cor == DialogResult.OK)
+            {
+                richTextBox1.ForeColor = colorDialog1.Color;
+            }
         }
     }
 }
