@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jUI+Ss5iq0aYdP3NtdsDRrX6YqKXQsjxKunfRoWM7RRVObjf8FeVdujGChMjF3YZJ17qbyf0+B3PYo6khH4l+g==",
+  "dgSpecHash": "YvaPpcbz9lHckYSWbAYjq7ZiO7Txa/zTcgPx8SmsHvnX2z3kceyIrLaLYEmf8chUwa2XgSOrvgIjIr/i8WXR7A==",
   "success": true,
   "projectFilePath": "D:\\C#\\editorDeTexto\\editorDeTexto\\editorDeTexto.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\fontawesome.sharp\\5.15.4\\fontawesome.sharp.5.15.4.nupkg.sha512"
+  ],
   "logs": []
 }

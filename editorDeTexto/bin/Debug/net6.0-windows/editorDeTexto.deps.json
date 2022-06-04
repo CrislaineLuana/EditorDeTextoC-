@@ -6,6 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
+      "editorDeTexto/1.0.0": {
+        "dependencies": {
+          "FontAwesome.Sharp": "5.15.4"
+        },
+        "runtime": {
+          "editorDeTexto.dll": {}
+        }
+      },
       "FontAwesome.Sharp/5.15.4": {
         "runtime": {
           "lib/net5.0-windows7.0/FontAwesome.Sharp.dll": {
@@ -17,6 +25,11 @@
     }
   },
   "libraries": {
+    "editorDeTexto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "FontAwesome.Sharp/5.15.4": {
       "type": "package",
       "serviceable": true,
