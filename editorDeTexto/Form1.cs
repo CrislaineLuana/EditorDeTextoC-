@@ -388,5 +388,40 @@ namespace editorDeTexto
         {
             Sublinhado();
         }
+
+        private void alinharEsquerda()
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void alinharDireita()
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Right;
+        }
+
+        private void alinharCentro()
+        {
+            richTextBox1.SelectionAlignment= HorizontalAlignment.Center;
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void btn_esquerda_Click(object sender, EventArgs e)
+        {
+            alinharEsquerda();
+        }
+
+        private void btn_centralizado_Click(object sender, EventArgs e)
+        {
+            alinharCentro();
+        }
+
+        private void btn_direita_Click(object sender, EventArgs e)
+        {
+            alinharDireita();
+        }
     }
 }
